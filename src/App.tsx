@@ -3,8 +3,9 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import { useTheme } from '@/providers';
-import DefaultTooltip from '@/components/tooltip/tooltip';
-
+import Tooltip from '@/components/Base/tooltip/tooltip';
+import * as CheckboxPrimitive from '@radix-ui/react-checkbox';
+import { Check, IndentDecrease, Minus } from 'lucide-react';
 function App() {
   const [count, setCount] = useState(0);
   const { toggleTheme } = useTheme();
@@ -23,10 +24,13 @@ function App() {
         <button className="btn btn-primary" onClick={toggleTheme}>
           test
         </button>
-
-        <DefaultTooltip title="Test Tooltip" placement='top'>
-          <div className="btn">Test Tooltip</div>
-        </DefaultTooltip>
+        <Tooltip
+          title="Test Tooltip"
+          placement="top"
+          className="!translate-y-[-440px] !translate-x-[627px]"
+        >
+          <div className="btn btn-primary btn-sm">Test Tooltip</div>
+        </Tooltip>
         <button
           className="btn bg-light dark:bg-dark text-gray-900"
           onClick={() => setCount((count) => count + 1)}

@@ -1,9 +1,9 @@
 import { FC } from 'react';
-import Tooltip, { TooltipProps } from '@mui/material/Tooltip';
+import DefaultTooltip, { TooltipProps } from '@mui/material/Tooltip';
 
-const DefaultTooltip: FC<TooltipProps> = ({ className, ...props }) => {
+const Tooltip: FC<TooltipProps> = ({ className, ...props }) => {
   return (
-    <Tooltip
+    <DefaultTooltip
       TransitionProps={{ timeout: 300 }}
       {...props}
 
@@ -16,4 +16,4 @@ const DefaultTooltip: FC<TooltipProps> = ({ className, ...props }) => {
   );
 };
 
-export default DefaultTooltip;
+export default Tooltip;
